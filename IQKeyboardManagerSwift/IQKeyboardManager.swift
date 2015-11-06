@@ -1801,8 +1801,9 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
                         }
                     } else {
                         
-                        let toolbar = textField.inputAccessoryView as! IQToolbar
-                        toolbar.title = nil
+                        if let toolbar = textField.inputAccessoryView as? IQToolbar {
+                            toolbar.title = nil
+                        }
                     }
                     
                     //If the toolbar is added by IQKeyboardManager then automatically enabling/disabling the previous/next button.
